@@ -1,5 +1,5 @@
 ## ClamAV Drutiny plugin
-This Drutiny plugin is to be used to provide addtional ClamAV based profiles and policies.
+This Drutiny plugin is to be used to provide additional ClamAV based profiles and policies.
 
 Note: There is a harmless EICAR text file in the testsuite which is used to check the scans. No need to remove this.
 
