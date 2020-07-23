@@ -34,7 +34,7 @@ class ClamAVScan extends Audit {
       }
     }
     catch (Exception $e) {
-      return FALSE;
+      return Audit::ERROR;
     }
 
     if (!$is_infected) {
