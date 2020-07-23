@@ -1,0 +1,10 @@
+title: "ClamScan policy"
+class: \Drutiny\ClamAV\Audit\ClamAVScan
+name: ClamAV:ClamAVScan
+description: |
+  Runs Clamscan antivirus and reports infected files.
+success: |
+  Success: There have been no infected files found.
+failure: |
+  Warning: Infected files have been found:
+    Number of infected: {{ report.infected_files_count }}
