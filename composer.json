@@ -7,7 +7,7 @@
     {"name": "Tim Clifford", "email": "tim.clifford@amazee.com"}
   ],
   "require": {
-    "drutiny/drutiny": "^2.3",
+    "drutiny/drutiny": "^2.4",
     "symfony/yaml": "^3.2 || ^4.0"
   },
   "autoload": {
