@@ -1,4 +1,6 @@
+.DS_Store
 vendor
-*.html
-.idea/
+.idea
+composer.lock
+*.phar
 .build
