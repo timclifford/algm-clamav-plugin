@@ -18,8 +18,8 @@ class ClamAVScan extends Audit {
     $infected_files_count = 0;
 
     try {
-      # Run clamsacn and pipe true to supress early exit error caused if infected files are found.
-      $output = $sandbox->exec('clamscan . --suppress-ok-results --stdout || true');
+      # Run clamscan and pipe true to suppress early exit error caused if infected files are found.
+      $output = $sandbox->exec('clamscan -r --bell -i --suppress-ok-results --exclude-dir=/vendor --max-filesize=10M --stdout . || true');
 
       $searchfor = 'Infected files';
       $pattern = "/^.*$searchfor.*\$/m";
@@ -38,7 +38,7 @@ class ClamAVScan extends Audit {
     }
 
     if (!$is_infected) {
-      return TRUE;
+      return Audit::PASS;
     }
 
     $result = [
@@ -46,11 +46,7 @@ class ClamAVScan extends Audit {
         'infected_files_count' => $infected_files_count
     ];
 
-    if (empty($result)) {
-      return FALSE;
-    }
-
     $sandbox->setParameter('report', $result);
-    return FALSE;
+    return Audit::FAIL;
   }
 }
